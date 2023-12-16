@@ -28,5 +28,7 @@ export class RolesRepository {
     return this.roles;
   }
 
-  findyByName() {}
+  findyByName(name: string): Role | undefined {
+    return this.roles.find(role => role.name === name);
+  }
 }
