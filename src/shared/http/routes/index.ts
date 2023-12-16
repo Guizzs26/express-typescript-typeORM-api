@@ -1,9 +1,12 @@
 import { Router } from 'express';
+import { rolesRouter } from '@roles/http/routes/roles.routes';
 
-const routes = Router();
+const router = Router();
 
-routes.get('/', (request, response) => {
+router.get('/', (request, response) => {
   return response.json({ message: 'Olá dev' });
 });
 
-export { routes };
+router.use('/roles', rolesRouter);
+
+export { router };
